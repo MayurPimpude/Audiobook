@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Speak-Lite</title>
+</head>
+
+<body>
+
+  <header>
+
+
+    <!-- Jumbotron -->
+    <div class="p-5 text-center bg-dark text-white">
+      <h1 class="mb-3">Speak-Lite</h1>
+      <h6 class="mb-3">Don't buy Audiobooks !</h6>
+    </div>
+    <!-- Jumbotron -->
+  </header>
+
+  <div class="container mt-3 mb-3">
+    <div class="row">
+      <div class="col">
+        <h2 class="mb-2 text-center">About</h2>
+        <p>An audiobook is a recording or voice-over of a book or other work being read out loud.
+          You do not need to buy a subscription for an audiobook if you have a pdf format of the book.
+          You can listen to audiobooks on any smartphone, tablet, computer, home speaker system, or in-car entertainment
+          system.</p>
+
+        <h5 class="mb-2">Technology</h5>
+
+        <p>Python has a large collection of libraries due to the very active community which serves various purposes.
+          Here we need to use two libraries pyttsx3 and PyPDF2 to create an audiobook with Python. </p>
+        <p>PyPDF2 allows manipulation of pdf in memory. </p>
+        <p>Pyttsx3 is a text-to-speech conversion library in Python.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Design Block -->
+  <section class="text-center">
+    <!-- Background image -->
+
+    <div class="bg-image">
+      <img src="../static/audio2.jpg" alt="audiobook" width="100%" height="600">
+    </div>
+    <!-- Background image -->
+
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+          top: -100px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5">Audio Book</h2>
+            <form action="/uploader" method="POST" enctype="multipart/form-data">
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                {% if name %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong>{{name}}</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endif %}
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" required id="form3Example1" class="form-control" />
+                    <label class="form-label" for="form3Example1">First name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" required id="form3Example2" class="form-control" />
+                    <label class="form-label" for="form3Example2">Last name</label>
+                  </div>
+                </div>
+              </div>
+
+              <input class="form-control" type="file" required name="file" accept="application/pdf" id="file ">
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-dark btn-block mt-5 mb-4" style="width: 100% ;">
+                Upload File
+              </button>
+              <!-- <a href="link/to/your/download/file" download> Download link </a> -->
+            </form>
+
+            <form action="/download" method="post" >
+              <button type="submit" class="btn btn-dark btn-block mt-2 mb-4" style="width: 100% ;">
+                Generate
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-dark text-white">
+
+    <!-- Section: Links  -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h4 class=" fw-bold mb-4">
+              Speak-Lite
+            </h4>
+            <p>
+              An audiobook is a recording or voice-over of a book or other work being read out loud.
+              You do not need to buy a subscription for an audiobook if you have a pdf format of the book.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p>Mumbai, 400604, India</p>
+            <p>
+              info@example.com
+            </p>
+            <p> + 01 234 567 88</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2021 Copyright: Mayur Pimpude
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</html>
